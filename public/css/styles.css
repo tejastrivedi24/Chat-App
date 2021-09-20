@@ -44,7 +44,12 @@ body {
     color: #333333;
     font-family: Helvetica, Arial, sans-serif;
 }
-
+button.spec{
+    background-color:#6b47b8
+}
+button.spec:hover{
+    background-color:#6239bb ;
+}
 h1 {
     margin-bottom: 16px;
 }
@@ -176,22 +181,23 @@ button:disabled {
 
 .compose input {
     border: 1px solid #eeeeee;
-    width: 100%;
     padding: 12px;
     margin: 0 16px 0 0;
     flex-grow: 1;
 }
 
 .compose button {
+    display: inline-block;
+    text-align: center;
     font-size: 14px;
 }
 
 /* Chat Sidebar Styles */
 
 .room-title {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 22px;
-    background: #2c2f3a;
+    background: #7C5CBF;
     padding: 24px;   
 }
 

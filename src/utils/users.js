@@ -1,6 +1,30 @@
 const users = []
 
-
+const availableRooms = () => {
+    if(users){
+        var currRooms=[]
+        users.forEach((user)=>{
+            if(!currRooms){
+                currRooms.push(user)
+            }
+            else{
+                const temp = currRooms.find((inuser)=>{
+                    return inuser.room===user.room
+                })
+                if(!temp){
+                    currRooms.push(user)
+                }
+                
+                    
+                
+            }
+            
+           
+            
+        })
+    }
+    return currRooms
+}
 const addUser= ({ id,username,room }) => {
     //clean the data
     // username = username.trim().toLowerCase()
@@ -51,10 +75,13 @@ const getUsersInRoom = (room) => {
     return users.filter((user) =>user.room === room)
 }
 
+
+
 module.exports = {
     addUser,
     removeUser,
     getUser,
-    getUsersInRoom
+    getUsersInRoom,
+    availableRooms
 }
 

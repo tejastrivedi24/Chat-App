@@ -45,7 +45,11 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 button.spec{
-    background-color:#6b47b8
+    background-color:#6b47b8;
+    position: absolute;
+    left: 190px;
+    
+    
 }
 button.spec:hover{
     background-color:#6239bb ;
@@ -101,9 +105,24 @@ button:disabled {
     box-shadow: 0px 0px 17px 1px #1D1F26;
     background: #F7F7FA;
     padding: 24px;
-    width: 250px;
+    width: 300px;
 }
 
+.centered-form__box2 {
+    /* box-shadow: 0px 0px 17px 1px #1D1F26; */
+    /* background: #F7F7FA; */
+    /* background-color: rgb(230, 230, 241); */
+    position: absolute;
+    background: #55349c;
+    right: 15px;
+    top: 5px;
+    color: white;
+    border: 6px solid white;
+    border-radius: 5px;
+    padding:15px;
+    min-width: 3px;
+    
+}
 .centered-form button {
     width: 100%;
 }
@@ -145,7 +164,11 @@ button:disabled {
 /* Message Styles */
 
 .message {
-    margin-bottom: 16px;   
+    margin-bottom: 16px;
+    padding: 10px; 
+    /* background-color: #cadae9; */
+    background-color:#e3ddf0;
+  
 }
 
 .message__name {
@@ -217,3 +240,8 @@ button:disabled {
     width: device-width;
     zoom: 1;
   }
+
+.rooms{
+    /* color: rgb(49, 18, 18); */
+    font-size: 18px;
+}

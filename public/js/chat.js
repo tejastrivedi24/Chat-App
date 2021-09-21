@@ -10,6 +10,7 @@ const $leaveRoom = document.querySelector('#leaveRoom')
 const messageTemplate = document.querySelector('#message-template').innerHTML
 const locationMessageTemplate = document.querySelector('#location-message-template').innerHTML
 const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML
+
 //Options
 const {username,room}=Qs.parse(location.search, {ignoreQueryPrefix:true})
 const socket = io()
@@ -36,6 +37,8 @@ const autoscroll = () => {
         $messages.scrollTop = $messages.scrollHeight
     }
 }
+
+
 socket.on('message', (mssg) => {
     console.log(mssg)
     const html = Mustache.render(messageTemplate,{
@@ -88,7 +91,7 @@ $sendLocationButton.addEventListener('click', () => {
     }
 
     $sendLocationButton.setAttribute('disabled','disabled')
-
+    
     navigator.geolocation.getCurrentPosition((position) => {
         console.log(position)
         socket.emit('sendLocation',{

@@ -7,21 +7,16 @@ const socketio = require('socket.io')
 const Filter = require('bad-words')
 const publicDirectoryPath = path.join(__dirname,'../public')
 const {generateMessage,generateLocationMessage} = require('./utils/messages.js')
-const {addUser,removeUser,getUser,getUsersInRoom,availableRooms} = require('./utils/users')
+const {addUser,removeUser,getUser,getUsersInRoom} = require('./utils/users')
 app.use(express.static(publicDirectoryPath))
+app.use(require('cors')())
 const server = http.createServer(app)
 const io = socketio(server)
 // let count = 0
 
 io.on('connection', (socket) => {
     console.log('New WebSocket connection!!')
-    let rooms=availableRooms()
-    console.log(rooms)
-    if(rooms.length!=0){
-        socket.emit('new',
-            {rooms}
-        )
-    }
+
     
     
     socket.on('join', (options,callback) => {

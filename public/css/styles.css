@@ -47,9 +47,7 @@ body {
 button.spec{
     background-color:#6b47b8;
     position: absolute;
-    left: 190px;
-    
-    
+    left: 190px;  
 }
 button.spec:hover{
     background-color:#6239bb ;
@@ -79,6 +77,7 @@ button {
     color: white;
     font-size: 16px;
     transition: background .3s ease;
+    border-radius: 10px;
 }
 
 button:hover {
@@ -93,7 +92,7 @@ button:disabled {
 /* Join Page Styles */
 
 .centered-form {
-    background: #333744;
+    background: #7f87a0;
     width: 100vw;
     height: 100vh;   
     display: flex;
@@ -108,21 +107,6 @@ button:disabled {
     width: 300px;
 }
 
-.centered-form__box2 {
-    /* box-shadow: 0px 0px 17px 1px #1D1F26; */
-    /* background: #F7F7FA; */
-    /* background-color: rgb(230, 230, 241); */
-    position: absolute;
-    background: #55349c;
-    right: 15px;
-    top: 5px;
-    color: white;
-    border: 6px solid white;
-    border-radius: 5px;
-    padding:15px;
-    min-width: 3px;
-    
-}
 .centered-form button {
     width: 100%;
 }
@@ -159,6 +143,10 @@ button:disabled {
     flex-grow: 1;
     padding: 24px 24px 0 24px;
     overflow-y: scroll;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* width: auto; */
 }
 
 /* Message Styles */
@@ -168,6 +156,7 @@ button:disabled {
     padding: 10px; 
     /* background-color: #cadae9; */
     background-color:#e3ddf0;
+    border-radius: 10px;
   
 }
 
@@ -245,3 +234,10 @@ button:disabled {
     /* color: rgb(49, 18, 18); */
     font-size: 18px;
 }
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }

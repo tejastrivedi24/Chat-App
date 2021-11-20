@@ -5,6 +5,7 @@ const $messageFormButton = $messageForm.querySelector('button')
 const $sendLocationButton = document.querySelector('#send-location')
 const $messages = document.querySelector('#messages')
 const $leaveRoom = document.querySelector('#leaveRoom')
+var mssgg = document.getElementById('message-type')
 
 //Templates
 const messageTemplate = document.querySelector('#message-template').innerHTML
@@ -108,27 +109,6 @@ $sendLocationButton.addEventListener('click', () => {
 
 
 
-
-// document.querySelector('#uploadfile').addEventListener('click', (e)=>{
-//     var data = e.originalEvent.target.files[0];
-//     readThenSendFile(data);      
-// });
-
-// function readThenSendFile(data){
-
-//     console.log('I am uploading file')
-
-//     var reader = new FileReader();
-//     reader.onload = function(evt){
-//         var msg ={};
-//         msg.username = username;
-//         msg.file = evt.target.result;
-//         msg.fileName = data.name;
-//         socket.emit('base64 file', msg);
-//     };
-//     reader.readAsDataURL(data);
-// }
-
 socket.emit('join',{username,room}, (error) => {
 
     if(error){
@@ -137,8 +117,8 @@ socket.emit('join',{username,room}, (error) => {
     }
 
 })
+
 $leaveRoom.addEventListener('click', () => {
-
     socket.emit('disconnection','Leaving')
-
 })
+
